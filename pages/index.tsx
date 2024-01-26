@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Gallery from "../components/Gallery ";
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
     <Navbar />
 
     {/* Home */}
-    <section id="home">
+    <section id="hero">
         <Hero />
     </section>
 
@@ -25,6 +26,9 @@ const Home: NextPage = () => {
     </section>
 
     {/* Gallery */}
+    <section id="gallery">
+        <Gallery />
+    </section>
 
     {/* Speakers */}
 
