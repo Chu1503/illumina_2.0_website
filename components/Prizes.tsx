@@ -15,9 +15,9 @@ export default function Prizes({}: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="flex flex-col relative h-auto text-center max-w-7xl justify-evenly mx-auto items-center p-24"
+      className="flex flex-col relative h-auto text-center max-w-7xl p-10 justify-evenly mx-auto items-center"
     >
-      <h2 className="pb-12 uppercase tracking-[20px] text-gray-500 text-3xl sm:text-4xl">
+      <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] font-bold text-[rgba(1,205,250,255)] text-3xl sm:text-4xl">
         Prizes
       </h2>
 

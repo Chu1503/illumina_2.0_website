@@ -10,14 +10,19 @@ import Prizes from "../components/Prizes";
 import Sponsors from "../components/Sponsors";
 import Footer from "../components/Footer";
 import BG from "../images/BACKGROUND.png";
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const Home: NextPage = () => {
   return (
     <div
       className="bg-[rgba(9,1,25,255)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden 
-   sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]"
+   sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#01cdfa]"
     >
       <Head>
+      <link
+          href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap"
+          rel="stylesheet"
+        />
         <title>Illumina 2.0</title>
       </Head>
 
@@ -58,6 +63,8 @@ const Home: NextPage = () => {
       <section id="sponsors">
         <Sponsors />
       </section>
+
+      <ScrollToTopButton />
 
       {/* Footer */}
       <section id="footer">

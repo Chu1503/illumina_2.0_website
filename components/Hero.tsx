@@ -5,13 +5,13 @@ type Props = {};
 
 export default function Hero({}: Props) {
   return (
-    <div className="h-auto flex flex-row -space-y-2 items-center justify-center text-center overflow-hidden p-24">
+    <div className="h-screen flex flex-col sm:flex-row -space-y-2 items-center justify-center text-center overflow-hidden p-10 sm:pb-28">
       <img
-        className="relative rounded-full sm:w-[50vw] w-[100vw] mx-auto object-contain"
+        className="relative rounded-full sm:w-[50vw] w-[100vw] pb-10 sm:pb-0 mx-auto"
         src={illumina_logo_text.src}
         alt="ILLUMINA LOGO TEXT"
       />
-      <p className="text-lg text-center">
+      <p className="text-lg sm:text-xl text-center leading-loose sm:leading-relaxed sm:pl-20 sm:pr-20">
         Embark on a transformative journey by participating in the renowned
         Illumina hackathon, meticulously organized by VIT Vellore's IE(I)
         Student Chapter. Building on the resounding success of the previous

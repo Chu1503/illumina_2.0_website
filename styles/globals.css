@@ -5,10 +5,11 @@
 @layer components {
   .herobutton {
     @apply px-7 py-0 border-[#242424] rounded-full uppercase text-sm tracking-widest text-white transition-all
-    hover:border-[#F7AB0A] hover:text-[#F7AB0A];
+    hover:border-[#01cdfa] hover:text-[#01cdfa];
   }
 }
 
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Oxanium', sans-serif;
 }
