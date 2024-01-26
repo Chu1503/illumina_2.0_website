@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import About from "../components/About";
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +15,14 @@ const Home: NextPage = () => {
     <Navbar />
 
     {/* Home */}
+    <section id="home">
+        <Hero />
+    </section>
 
-    {/* About IEI */}
+    {/* About */}
+    <section id="about">
+        <About />
+    </section>
 
     {/* Gallery */}
 

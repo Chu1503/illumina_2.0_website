@@ -16,7 +16,7 @@ export default function Navbar({}: Props) {
       </div>
 
       <div className="flex flex-row items-center text-gray-300 p-5 ">
-        <Link href="#home">
+        <Link href="#hero">
           <button className="herobutton cursor-pointer">Home</button>
         </Link>
 
