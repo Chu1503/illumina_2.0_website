@@ -74,7 +74,7 @@ export default function Gallery({}: Props) {
           duration: 1.5,
         }}
       >
-        <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] font-bold text-[rgba(1,205,250,255)] text-3xl sm:text-4xl">
+        <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl">
           Gallery
         </h2>
       </motion.div>
