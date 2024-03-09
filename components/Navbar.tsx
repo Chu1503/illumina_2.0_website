@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import iei_logo_text from "../images/iei_logo_text.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Props = {};
 
