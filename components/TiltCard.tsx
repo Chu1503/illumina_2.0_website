@@ -44,8 +44,8 @@ const TiltCard = () => {
       style={{
         transform: "translateZ(500px)",
         transformStyle: "preserve-3d",
-        backdropFilter: "blur(20px)",
-        backgroundColor: "rgba(255, 255, 255, 0.15)",
+        backdropFilter: "blur(50px)",
+        backgroundColor: "rgba(255, 255, 255, 0.10)",
       }}
       animate={{
         rotateX,
@@ -68,13 +68,13 @@ const TiltCard = () => {
         </p>
         <div className="flex justify-center items-center mt-5">
           {" "}
-          <a href="#" className="align-center">
+          <a href="#" target="_blank" className="align-center">
             <FaInstagram
               className="text-pink-500 hover:text-pink-700 mr-2.5"
               size={25}
             />
           </a>
-          <a href="#" className="">
+          <a href="https://www.linkedin.com/in/rahul-cse/?originalSubdomain=in" target="_blank" className="">
             <FaLinkedin
               className="text-blue-500 hover:text-blue-700 ml-2.5"
               size={25}

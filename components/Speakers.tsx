@@ -44,4 +44,4 @@ export default function Speakers({}: Props) {
       <TiltCard />
     </motion.div>
   );
-}
+} 

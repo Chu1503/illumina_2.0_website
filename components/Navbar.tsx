@@ -54,25 +54,26 @@ export default function Navbar({}: Props) {
           <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>About</button>
         </Link>
 
-        <Link href="#gallery">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Gallery</button>
-        </Link>
-
         <Link href="#speakers">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Speakers</button>
+          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Speaker</button>
         </Link>
 
         <Link href="#timeline">
           <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Timeline</button>
+        </Link>
+        
+        <Link href="#sponsors">
+          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Sponsors</button>
         </Link>
 
         <Link href="#prizes">
           <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Prizes</button>
         </Link>
 
-        <Link href="#sponsors">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Sponsors</button>
+        <Link href="#gallery">
+          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Gallery</button>
         </Link>
+
       </div>
     </header>
   );

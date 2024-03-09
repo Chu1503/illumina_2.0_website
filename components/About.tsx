@@ -19,7 +19,7 @@ export default function About({}: Props) {
       className="flex flex-col relative h-auto text-center max-w-7xl p-4 justify-evenly mx-auto items-center"
     >
       <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl">
-        About IE(I)
+        About
       </h2>
 
       <motion.div
@@ -68,12 +68,13 @@ export default function About({}: Props) {
           and non-technical growth, organizing diverse events and activities.
         </p>*/}
 
-Embark on a transformative journey by participating in the renowned
-        Illumina hackathon, meticulously organized by VIT Vellore's IE(I)
-        Student Chapter. Building on the resounding success of the previous
-        edition, this event beckons you to partake in a thrilling experience
-        dedicated to fostering creativity, innovation, and collaboration.
-      
+        <p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20">
+          Embark on a transformative journey by participating in the renowned
+          Illumina hackathon, meticulously organized by VIT Vellore's IE(I)
+          Student Chapter. Building on the resounding success of the previous
+          edition, this event beckons you to partake in a thrilling experience
+          dedicated to fostering creativity, innovation, and collaboration.
+        </p>
       </motion.div>
     </motion.div>
   );
