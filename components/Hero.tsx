@@ -5,12 +5,16 @@ type Props = {};
 
 export default function Hero({}: Props) {
   return (
-    <div className="h-screen flex flex-col sm:flex-col -space-y-2 items-center  justify-around align-center text-center overflow-hidden p-4 sm:pb-28">
+    <div className="h-screen flex flex-col sm:flex-col items-center justify-center align-center text-center overflow-hidden p-5 sm:pb-28">
       <img
-        className="relative rounded-full sm:w-[50vw] w-[100vw] pb-10 sm:pb-0 mx-auto"
+        className="relative rounded-full sm:w-[50vw] w-[100vw] mx-auto mb-20"
         src={illumina_logo_text.src}
         alt="ILLUMINA LOGO TEXT"
       />
+      <button className="text-xl sm:text-3xl p-3 bg-[rgba(110,50,169,255)] text-[rgba(9,1,25,255)] rounded-full flex items-center justify-center">
+        Register Now
+      </button>
+
       {/*
       <p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20">
         Embark on a transformative journey by participating in the renowned
@@ -19,8 +23,6 @@ export default function Hero({}: Props) {
         edition, this event beckons you to partake in a thrilling experience
         dedicated to fostering creativity, innovation, and collaboration.
       </p>*/}
-      <div><button className="text-lg sm:text-xl bg-black w-[10vw] h-[6vh] rounded">Login</button></div>
-    
     </div>
   );
 }
