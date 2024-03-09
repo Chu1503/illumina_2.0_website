@@ -37,11 +37,11 @@ export default function About({}: Props) {
         viewport={{ once: true }}
         className="flex flex-col space-y-10 px-0 md:px-10"
       >
-        <img
-          //className="relative rounded-full h-60 w-60 mx-auto object-contain p-5"
-          //src={iei_logo.src}
-          //alt="ILLUMINA LOGO TEXT"
-        />
+        {/* <img
+          className="relative rounded-full h-60 w-60 mx-auto object-contain p-5"
+          src={iei_logo.src}
+          alt="ILLUMINA LOGO TEXT"
+        /> */}
       </motion.div>
       <motion.div
         initial={{
