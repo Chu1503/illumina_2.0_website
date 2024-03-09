@@ -51,7 +51,7 @@ const TiltCard = () => {
         rotateX,
         rotateY,
       }}
-      className="relative h-auto w-auto rounded-xl flex sm:flex-row flex-col items-center p-5"
+      className="relative h-auto w-auto sm:w-[55vw] rounded-xl flex sm:flex-row flex-col items-center p-5"
     >
       <div className="flex-shrink-0">
         <img

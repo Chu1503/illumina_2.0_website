@@ -10,58 +10,52 @@ type Event = {
 
 const events: Event[] = [
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "OPENING CEREMONY",
+    date: "18th March",
+    timing: "8 AM",
     direction: "right",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "GUEST SPEAKER",
+    date: "18th March",
+    timing: "3 PM",
     direction: "left",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "FUN NIGHT",
+    date: "18th March",
+    timing: "11 PM",
     direction: "right",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "FACULTY REVIEW 1",
+    date: "19th March",
+    timing: "8 AM",
     direction: "left",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "FACULTY REVIEW 2",
+    date: "19th March",
+    timing: "6 PM",
     direction: "right",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "TRIVIA NIGHT",
+    date: "19th March",
+    timing: "11 PM",
     direction: "left",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "FINAL REVIEW",
+    date: "20th March",
+    timing: "4 AM",
     direction: "right",
   },
   {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
+    heading: "RESULTS DECLARATION",
+    date: "20th March",
+    timing: "8 AM",
     direction: "left",
-  },
-  {
-    heading: "TITLE",
-    date: "DATE",
-    timing: "TIME",
-    direction: "right",
   },
 ];
 
@@ -79,33 +73,41 @@ const Pillar = () => {
 
 const EventCard = ({ heading, timing, direction, date }: Event) => {
   return direction === "left" ? (
-    <div className="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl flex flex-row gap-x-2 border shadow-md rounded-xl p-4 items-center justify-center w-auto">
-      <div className="flex flex-col w-auto">
-        <div className="text-white text-xs md:text-base">{date}</div>
-        <div className="text-white text-xs md:text-base">{timing}</div>
+    <div className="flex items-center justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl border shadow-md rounded-xl p-5">
+      <div className="flex flex-col items-center justify-center">
+        <div className="text-white text-center text-xs md:text-base">
+          {date}
+        </div>
+        <div className="text-white text-center text-xs md:text-base">
+          {timing}
+        </div>
       </div>
-      <div className="items-center w-auto">
+      <div className="flex items-center">
         <div className="w-[1px] h-[100px] border"></div>
       </div>
-      <div className="flex flex-col shadow-md w-auto">
+      <div className="flex flex-col items-center justify-center shadow-md">
         <div className="text-[rgba(1,205,250,255)] text-xs md:text-base">
           {heading}
         </div>
       </div>
     </div>
   ) : (
-    <div className="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl flex flex-row gap-x-2 border shadow-md rounded-xl p-4 items-center justify-center w-auto">
-      <div className="flex flex-col w-auto">
+    <div className="flex items-center justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl border shadow-md rounded-xl p-5">
+      <div className="flex flex-col items-center justify-center">
         <div className="text-[rgba(1,205,250,255)] text-xs md:text-base">
           {heading}
         </div>
       </div>
-      <div className="items-center w-auto">
+      <div className="flex items-center">
         <div className="w-[1px] h-[100px] border"></div>
       </div>
-      <div className="flex flex-col shadow-md w-auto">
-        <div className="text-white text-xs md:text-base">{date}</div>
-        <div className="text-white text-xs md:text-base">{timing}</div>
+      <div className="flex flex-col items-center justify-center shadow-md">
+        <div className="text-white text-center text-xs md:text-base">
+          {date}
+        </div>
+        <div className="text-white text-center text-xs md:text-base">
+          {timing}
+        </div>
       </div>
     </div>
   );

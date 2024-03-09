@@ -62,7 +62,7 @@ export default function Gallery({}: Props) {
   };
 
   return (
-    <div className="flex flex-col relative h-auto text-center max-w-7xl p-10 justify-evenly mx-auto items-center">
+    <div className="flex flex-col relative h-auto text-center max-w-4xl p-10 justify-evenly mx-auto items-center">
       <motion.div
         initial={{
           opacity: 0,
