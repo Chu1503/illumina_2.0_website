@@ -14,8 +14,8 @@ export default function Hero({}: Props) {
         src={illumina_logo_text.src}
         alt="ILLUMINA LOGO TEXT"
       />
-      <button className="text-xl sm:text-2xl p-3 bg-[rgba(110,50,169,255)] text-[rgba(9,1,25,255)] rounded-full flex items-center justify-center"
-      onClick={()=>{router.push('/sign-in')}}>
+      <button className="text-xl sm:text-2xl p-3 bg-[rgba(110,50,169,255)] text-[rgb(255,255,255)] rounded-full flex items-center justify-center"
+      onClick={()=>{router.push('/login')}}>
         Get Started
       </button>
       {/*
