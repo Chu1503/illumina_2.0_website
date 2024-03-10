@@ -89,6 +89,10 @@ const Register = () => {
     }
   };
 
+  const handleBack = () => {
+    router.push("/");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center [background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)]">
       <div className="flex flex-col items-center backdrop-filter backdrop-blur-lg bg-opacity-10 bg-white p-10 rounded-lg shadow-xl w-[85vw] sm:w-[25vw]">
@@ -150,7 +154,7 @@ const Register = () => {
         )}
         <button
           onClick={handleRegister}
-          className="w-full mt-5 p-3 rounded-md bg-[rgba(110,50,169,255)] text-[rgb(255,255,255)] hover:bg-[rgba(110,50,169,0.5)]"
+          className="w-[75vw] sm:w-full mt-5 p-3 rounded-md bg-[rgba(110,50,169,255)] text-[rgb(255,255,255)] hover:bg-[rgba(110,50,169,0.5)]"
         >
           Submit
         </button>
@@ -164,6 +168,12 @@ const Register = () => {
             Login
           </button>
         </div>
+        <button
+          onClick={handleBack}
+          className="mt-5 p-3 rounded-md bg-[rgba(110,50,169,255)] text-[rgb(255,255,255)] hover:bg-[rgba(110,50,169,0.5)]"
+        >
+          Back to Home
+        </button>
       </div>
     </div>
   );
