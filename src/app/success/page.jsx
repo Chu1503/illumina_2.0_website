@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 function RegistrationSuccessPage() {
   const router = useRouter();
   return (
-    <div className="min-h-screen flex items-center justify-center [background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)]">
+    <div className="h-screen flex items-center justify-center [background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)]">
       <div className="flex flex-col items-center backdrop-filter backdrop-blur-lg bg-opacity-10 bg-white p-10 rounded-lg shadow-xl w-[85vw] sm:w-[45vw]">
         <h2 className="uppercase text-[rgba(1,205,250,255)] text-2xl sm:text-3xl tracking-widest mb-5 text-center">
           Registration Successful!
