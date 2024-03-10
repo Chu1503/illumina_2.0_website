@@ -1,9 +1,12 @@
+'use client'
 import React from "react";
 import illumina_logo_text from "../images/illumina_logo_text.png";
+import { useRouter } from 'next/navigation';
 
 type Props = {};
 
 export default function Hero({}: Props) {
+  const router = useRouter()
   return (
     <div className="h-screen flex flex-col sm:flex-col items-center justify-center align-center text-center overflow-hidden p-5 sm:pb-28">
       <img
@@ -12,7 +15,7 @@ export default function Hero({}: Props) {
         alt="ILLUMINA LOGO TEXT"
       />
       <button className="text-xl sm:text-2xl p-3 bg-[rgba(110,50,169,255)] text-[rgba(9,1,25,255)] rounded-full flex items-center justify-center"
-     >
+      onClick={()=>{router.push('/sign-in')}}>
         Get Started
       </button>
       {/*

@@ -1,3 +1,4 @@
+'use client'
 import React, { Fragment } from "react";
 import { motion } from "framer-motion";
 
@@ -92,16 +93,16 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
       </div>
     </div>
   ) : (
-    <div className="flex sm:w-[100%] w-[200px] items-center justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl border shadow-md rounded-xl p-5">
-      <div className="flex flex-col items-center justify-center w-[50%]">
-        <div className="text-[rgba(1,205,250,255)] text-xs md:text-base p-1">
+    <div className="flex items-center justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl border shadow-md rounded-xl p-5">
+      <div className="flex flex-col items-center justify-center">
+        <div className="text-[rgba(1,205,250,255)] text-xs md:text-base">
           {heading}
         </div>
       </div>
-      <div className="flex items-center w-[5%]">
+      <div className="flex items-center">
         <div className="w-[1px] h-[100px] border"></div>
       </div>
-      <div className="flex flex-col items-center justify-center shadow-md w-[45%]">
+      <div className="flex flex-col items-center justify-center shadow-md">
         <div className="text-white text-center text-xs md:text-base">
           {date}
         </div>

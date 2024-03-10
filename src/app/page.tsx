@@ -1,17 +1,19 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Gallery from "../components/Gallery";
-import Speakers from "../components/Speakers";
-import Timeline from "../components/Timeline";
-import Prizes from "../components/Prizes";
-import Sponsors from "../components/Sponsors";
-import Footer from "../components/Footer";
-import ScrollToTopButton from '../components/ScrollToTopButton';
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import About from "../../components/About";
+import Gallery from "../../components/Gallery";
+import Speakers from "../../components/Speakers";
+import Timeline from "../../components/Timeline";
+import Prizes from "../../components/Prizes";
+import Sponsors from "../../components/Sponsors";
+import Footer from "../../components/Footer";
+import ScrollToTopButton from '../../components/ScrollToTopButton';
+// import { useRouter } from 'next/navigation'
 
 const Home: NextPage = () => {
+  // const router = useRouter();
   return (
     <div
       className="[background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden 

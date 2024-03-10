@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import Link from "next/link";
 import iei_logo_text from "../images/iei_logo_text.png";
