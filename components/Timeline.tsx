@@ -61,13 +61,13 @@ const events: Event[] = [
 
 const Circle = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-full w-4 h-4 mx-auto"></div>
+    <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-full w-4 h-4 sm:mx-auto ml-[-3px]"></div>
   );
 };
 
 const Pillar = () => {
   return (
-    <div className="bg-gradient-to-b from-blue-500 to-teal-500 rounded-t-full rounded-b-full w-2 h-full mx-auto"></div>
+    <div className="bg-gradient-to-b from-blue-500 to-teal-500 rounded-t-full rounded-b-full w-2 h-full sm:mx-auto"></div>
   );
 };
 
@@ -144,7 +144,8 @@ export default function Timeline() {
         viewport={{ once: true }}
         className="flex flex-col space-y-10 px-0 md:px-10"
       >
-        <div className="flex flex-col gap-y-3 w-full my-4">
+        
+        <div className="flex flex-col gap-y-3 w-full my-4 hidden md:block">
           <Circle />
           {events.map((event, key) => {
             return (
@@ -171,6 +172,25 @@ export default function Timeline() {
                   ) : (
                     <div></div>
                   )}
+                </div>
+                {key < events.length - 1 && <Circle />}
+              </Fragment>
+            );
+          })}
+        </div>
+        <div className="flex flex-col gap-y-3 w-full my-4 block md:hidden">
+          <Circle/>
+          {events.map((event, key) => {
+            return (
+              <Fragment key={key}>
+                <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 w-[100%]">
+                  <Pillar />
+                    <EventCard
+                      heading={event.heading}
+                      timing={event.timing}
+                      direction="right"
+                      date={event.date}
+                    />
                 </div>
                 {key < events.length - 1 && <Circle />}
               </Fragment>
