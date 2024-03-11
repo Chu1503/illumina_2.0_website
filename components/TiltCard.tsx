@@ -62,7 +62,7 @@ const TiltCard = () => {
         />
       </div>
       <div className="flex flex-col flex-grow justify-center p-4">
-        <h1 className="text-5xl font-bold">Name</h1>
+        <h1 className="text-5xl font-bold">Rahul Maheswari</h1>
         <p className="text-md mt-5 text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac
           justo ut quam efficitur commodo.
