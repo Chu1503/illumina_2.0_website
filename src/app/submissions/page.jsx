@@ -12,14 +12,14 @@ function RegistrationSuccessPage() {
   const [teamMembers, setTeamMembers] = useState(["Team Member 1", "Team Member 2"]);
 
   const addTeamMember = () => {
-    if (teamMembers.length < 5) {
+    if (teamMembers.length < 4) {
       const newMember = `Team Member ${teamMembers.length + 1}`;
       setTeamMembers([...teamMembers, newMember]);
     }
   };
 
   return (
-    <div className="h-screen flex items-center justify-center [background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)]">
+    <div className="h-[100vh] flex items-center justify-center [background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)]">
       <div className="flex flex-col items-center backdrop-filter backdrop-blur-lg bg-opacity-10 bg-white p-10 rounded-lg shadow-xl w-[85vw] sm:w-[40vw]">
         <h2 className="uppercase text-[rgba(1,205,250,255)] text-2xl sm:text-3xl tracking-widest mb-5 text-center">
           Submission
@@ -32,7 +32,7 @@ function RegistrationSuccessPage() {
             className="w-[75vw] sm:w-full p-3 mb-4 bg-gray-700 rounded outline-none text-white placeholder-gray-500"
           />
         ))}
-        {teamMembers.length < 5 && (
+        {teamMembers.length < 4 && (
           <div className="w-[75vw] sm:w-full p-3 mb-4 bg-gray-700 rounded outline-none text-white placeholder-gray-500 flex items-center" onClick={addTeamMember}>
             <button className="flex items-center mr-2 focus:outline-none">
               <RiAddLine className="text-gray-400 cursor-pointer" />
