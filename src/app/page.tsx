@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import About from "../../components/About";
+import Tracks from "../../components/Tracks";
 import Gallery from "../../components/Gallery";
 import Speakers from "../../components/Speakers";
 import Timeline from "../../components/Timeline";
@@ -36,6 +37,11 @@ const Home: NextPage = () => {
       {/* About */}
       <section id="about">
         <About />
+      </section>
+
+      {/* Tracks */}
+      <section id="tracks">
+        <Tracks />
       </section>
 
       {/* Speakers */}

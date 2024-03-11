@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { Fragment } from "react";
 import { motion } from "framer-motion";
 
@@ -29,13 +29,13 @@ const events: Event[] = [
     direction: "right",
   },
   {
-    heading: "FACULTY REVIEW 1",
+    heading: "FACULTY REVIEW",
     date: "19th March",
     timing: "8 AM",
     direction: "left",
   },
   {
-    heading: "FACULTY REVIEW 2",
+    heading: "FACULTY REVIEW",
     date: "19th March",
     timing: "6 PM",
     direction: "right",
@@ -62,53 +62,50 @@ const events: Event[] = [
 
 const Circle = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-full w-4 h-4 sm:mx-auto ml-[-3px]"></div>
+    <div className="bg-white rounded-full w-3 h-3 sm:mx-auto ml-[-5px] border-none"></div>
   );
 };
 
 const Pillar = () => {
   return (
-    <div className="bg-gradient-to-b from-blue-500 to-teal-500 rounded-t-full rounded-b-full w-2 h-full sm:mx-auto"></div>
+    <div className="bg-white w-0.5 h-full sm:h-28 sm:mx-auto border-none"></div>
   );
 };
 
 const EventCard = ({ heading, timing, direction, date }: Event) => {
-  return direction === "left" ? (
-    <div className="flex items-center justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl border shadow-md rounded-xl p-5">
-      <div className="flex flex-col items-center justify-center">
-        <div className="text-white text-center text-xs md:text-base">
-          {date}
-        </div>
-        <div className="text-white text-center text-xs md:text-base">
-          {timing}
-        </div>
-      </div>
-      <div className="flex items-center">
-        <div className="w-[1px] h-[100px] border"></div>
-      </div>
-      <div className="flex flex-col items-center justify-center shadow-md">
-        <div className="text-[rgba(1,205,250,255)] text-xs md:text-base">
-          {heading}
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div className="flex items-center justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl border shadow-md rounded-xl p-5">
-      <div className="flex flex-col items-center justify-center">
-        <div className="text-[rgba(1,205,250,255)] text-xs md:text-base">
-          {heading}
-        </div>
-      </div>
-      <div className="flex items-center">
-        <div className="w-[1px] h-[100px] border"></div>
-      </div>
-      <div className="flex flex-col items-center justify-center shadow-md">
-        <div className="text-white text-center text-xs md:text-base">
-          {date}
-        </div>
-        <div className="text-white text-center text-xs md:text-base">
-          {timing}
-        </div>
+  return (
+    <div className="w-[70vw] sm:w-[20vw]">
+      {" "}
+      <div className="flex items-center bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 justify-between transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl shadow-md rounded-xl p-5 border-[rgba(1,205,250,255)] border-solid border-b-[3px]">
+        {direction === "left" ? (
+          <>
+            <div className="flex flex-row w-[70vw] sm:w-[20vw]">
+              <div className="w-1/2 flex flex-col justify-center items-center">
+                <div className="tex-center">{date}</div>
+                <div className="text-center">{timing}</div>
+              </div>
+              <div className="w-1/2 flex flex-col justify-center items-center">
+                <div className="text-center text-[rgba(1,205,250,255)]">
+                  {heading}
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="flex flex-row w-[70vw] sm:w-[20vw]">
+              <div className="w-1/2 flex flex-col justify-center items-center">
+                <div className="text-center text-[rgba(1,205,250,255)]">
+                  {heading}
+                </div>
+              </div>
+              <div className="w-1/2 flex flex-col justify-center items-center">
+                <div className="tex-center">{date}</div>
+                <div className="text-center">{timing}</div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
@@ -145,7 +142,6 @@ export default function Timeline() {
         viewport={{ once: true }}
         className="flex flex-col space-y-10 px-0 md:px-10"
       >
-        
         <div className="flex flex-col gap-y-3 w-full my-4 hidden md:block">
           <Circle />
           {events.map((event, key) => {
@@ -180,18 +176,18 @@ export default function Timeline() {
           })}
         </div>
         <div className="flex flex-col gap-y-3 w-full my-4 block md:hidden">
-          <Circle/>
+          <Circle />
           {events.map((event, key) => {
             return (
               <Fragment key={key}>
                 <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 w-[100%]">
                   <Pillar />
-                    <EventCard
-                      heading={event.heading}
-                      timing={event.timing}
-                      direction="right"
-                      date={event.date}
-                    />
+                  <EventCard
+                    heading={event.heading}
+                    timing={event.timing}
+                    direction="right"
+                    date={event.date}
+                  />
                 </div>
                 {key < events.length - 1 && <Circle />}
               </Fragment>
