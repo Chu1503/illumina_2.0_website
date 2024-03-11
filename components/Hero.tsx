@@ -2,6 +2,7 @@
 import React from "react";
 import illumina_logo_text from "../images/illumina_logo_text.png";
 import { useRouter } from 'next/navigation';
+// import ParticlesBackground from './ParticlesBackground';
 
 type Props = {};
 
@@ -9,6 +10,7 @@ export default function Hero({}: Props) {
   const router = useRouter()
   return (
     <div className="h-screen flex flex-col sm:flex-col items-center justify-center align-center text-center overflow-hidden p-5 sm:pb-28">
+      {/* <ParticlesBackground/> */}
       <img
         className="relative rounded-full sm:w-[50vw] w-[100vw] mx-auto mb-20"
         src={illumina_logo_text.src}

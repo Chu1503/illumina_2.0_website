@@ -68,7 +68,6 @@ export default function About({}: Props) {
           IE(I) student chapter serves as a platform for comprehensive technical
           and non-technical growth, organizing diverse events and activities.
         </p>*/}
-
         <p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20">
           Embark on a transformative journey by participating in the renowned
           Illumina hackathon, meticulously organized by VIT Vellore's IE(I)
@@ -77,6 +76,7 @@ export default function About({}: Props) {
           dedicated to fostering creativity, innovation, and collaboration.
         </p>
       </motion.div>
+      
     </motion.div>
   );
 }
