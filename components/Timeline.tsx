@@ -55,7 +55,7 @@ const events: Event[] = [
   {
     heading: "RESULTS DECLARATION",
     date: "19th March",
-    timing: "6:30 PM IST",
+    timing: "6:30 PM",
     direction: "left",
   },
 ];
