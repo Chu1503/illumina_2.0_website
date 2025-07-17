@@ -84,14 +84,14 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
         {direction === "left" ? (
           <div className="flex flex-row w-full items-stretch">
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center font-semibold uppercase text-lg text-white break-words">{date}</div>
-              <div className="text-center font-semibold uppercase text-lg text-white break-words">{timing}</div>
+              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{date}</div>
+              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{timing}</div>
             </div>
 
             <div className="w-[1px] bg-white opacity-30 mx-2" />
 
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-2xl break-words">
+              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-md xl:text-lg break-words">
                 {heading}
               </div>
             </div>
@@ -99,7 +99,7 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
         ) : (
           <div className="flex flex-row w-full items-stretch">
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-2xl break-words">
+              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-md xl:text-lg break-words">
                 {heading}
               </div>
             </div>
@@ -107,8 +107,8 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
             <div className="w-[1px] bg-white opacity-30 mx-2" />
 
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center font-semibold uppercase text-lg text-white break-words">{date}</div>
-              <div className="text-center font-semibold uppercase text-lg text-white break-words">{timing}</div>
+              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{date}</div>
+              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{timing}</div>
             </div>
           </div>
         )}
