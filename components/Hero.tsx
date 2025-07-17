@@ -110,8 +110,16 @@ export default function Hero({}: Props) {
         <button
           className="text-lg p-2 border border-white text-white hover:bg-white hover:text-black hover:border-black rounded-lg cursor-pointer transition-opacity duration-500"
           style={{
-            opacity: offsetY > window.innerHeight * 0.1 ? 0 : 1,
-            pointerEvents: offsetY > window.innerHeight * 0.1 ? "none" : "auto",
+            opacity:
+              typeof window !== "undefined" &&
+              offsetY > window.innerHeight * 0.1
+                ? 0
+                : 1,
+            pointerEvents:
+              typeof window !== "undefined" &&
+              offsetY > window.innerHeight * 0.1
+                ? "none"
+                : "auto",
           }}
           onClick={() => router.push("/login")}
         >
