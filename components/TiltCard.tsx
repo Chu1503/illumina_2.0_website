@@ -1,89 +1,57 @@
-'use client'
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import iei_logo from "../images/iei_logo.png";
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import React, { useEffect, useRef } from "react";
+import VanillaTilt from "vanilla-tilt";
 
-const ROTATION_RANGE = 32.5;
-const HALF_ROTATION_RANGE = 32.5 / 2;
+interface TiltCardProps {
+  imageSrc: string;
+  altText: string;
+  name: string;
+  link: string;
+}
 
-const TiltCard = () => {
-  const ref = useRef<HTMLDivElement>(null);
+const TiltCard: React.FC<TiltCardProps> = ({
+  imageSrc,
+  altText,
+  name,
+  link,
+}) => {
+  const tiltRef = useRef<HTMLDivElement>(null);
 
-  const [rotateX, setRotateX] = useState<number>(0);
-  const [rotateY, setRotateY] = useState<number>(0);
+  useEffect(() => {
+    if (tiltRef.current) {
+      VanillaTilt.init(tiltRef.current, {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3,
+        scale: 1.05,
+      });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
+      const glareInner = tiltRef.current.querySelector(
+        ".js-tilt-glare-inner"
+      ) as HTMLElement;
 
-    const rect = ref.current.getBoundingClientRect();
+      if (glareInner) {
+        glareInner.style.background = "rgba(255, 255, 255, 0.2)";
+      }
+    }
+  }, []);
 
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
-    const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
-
-    const rY = mouseX / width - HALF_ROTATION_RANGE;
-    const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
-
-    setRotateX(rX);
-    setRotateY(rY);
-  };
-
-  const handleMouseLeave = () => {
-    if (!ref.current) return;
-    setRotateX(0);
-    setRotateY(0);
+  const handleClick = () => {
+    window.open(link, "_blank");
   };
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: "translateZ(500px)",
-        transformStyle: "preserve-3d",
-        backdropFilter: "blur(50px)",
-        backgroundColor: "rgba(255, 255, 255, 0.10)",
-      }}
-      animate={{
-        rotateX,
-        rotateY,
-      }}
-      className="relative h-auto w-auto sm:w-[55vw] rounded-xl flex sm:flex-row flex-col items-center p-5"
+    <div
+      ref={tiltRef}
+      className="cursor-pointer w-128 h-128 bg-white/10 border border-white/15 rounded-[10px] overflow-hidden shadow-lg"
+      onClick={handleClick}
     >
-      <div className="flex-shrink-0">
-        <img
-          className="sm:h-[20vw] sm:w-[20vw] h-[50vw] w-[50vw] rounded-full"
-          src={iei_logo.src}
-          alt="iei_logo"
-        />
-      </div>
-      <div className="flex flex-col flex-grow justify-center p-4">
-        <h1 className="text-5xl font-bold">Rahul Maheswari</h1>
-        <p className="text-md mt-5 text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac
-          justo ut quam efficitur commodo.
-        </p>
-        <div className="flex justify-center items-center mt-5">
-          {" "}
-          <a href="#" target="_blank" className="align-center">
-            <FaInstagram
-              className="text-pink-500 hover:text-pink-700 mr-2.5"
-              size={25}
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/rahul-cse/?originalSubdomain=in" target="_blank" className="">
-            <FaLinkedin
-              className="text-blue-500 hover:text-blue-700 ml-2.5"
-              size={25}
-            />
-          </a>
-        </div>
-      </div>
-    </motion.div>
+      <img
+        src={imageSrc}
+        alt={altText}
+        className="w-full h-full object-cover"
+      />
+    </div>
   );
 };
 

@@ -19,7 +19,7 @@ export default function About({}: Props) {
       }}
       className="flex flex-col relative h-auto text-center max-w-7xl p-4 justify-evenly mx-auto items-center"
     >
-      <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl">
+      <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl font-bold">
         About
       </h2>
 
@@ -59,7 +59,7 @@ export default function About({}: Props) {
         viewport={{ once: true }}
         className="flex flex-col space-y-10 px-0 md:px-10"
       >
-        {/*<p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20">
+        <p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20">
           The Institution of Engineers (India) is a prestigious non-profit
           organization established in 1920. Our mission is to advance
           engineering, technology, and their practical applications. As the
@@ -67,7 +67,7 @@ export default function About({}: Props) {
           innovative strategies to promote sustainable development. At VIT, our
           IE(I) student chapter serves as a platform for comprehensive technical
           and non-technical growth, organizing diverse events and activities.
-        </p>*/}
+        </p>
         <p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20">
           Embark on a transformative journey by participating in the renowned
           Illumina hackathon, meticulously organized by VIT Vellore's IE(I)

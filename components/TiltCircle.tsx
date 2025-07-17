@@ -1,37 +1,59 @@
-'use client'
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import VanillaTilt from "vanilla-tilt";
 
-const TiltCircle = () => {
-  const [isHovered, setIsHovered] = useState(false);
+interface TiltCircleProps {
+  imageSrc: string;
+  altText: string;
+  name: string;
+  link: string;
+}
 
-  const handleHover = () => {
-    setIsHovered(!isHovered);
+const TiltCircle: React.FC<TiltCircleProps> = ({
+  imageSrc,
+  altText,
+  name,
+  link,
+}) => {
+  const tiltRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (tiltRef.current) {
+      VanillaTilt.init(tiltRef.current, {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3,
+        scale: 1,
+      });
+
+      const glareInner = tiltRef.current.querySelector(
+        ".js-tilt-glare-inner"
+      ) as HTMLElement;
+
+      if (glareInner) {
+        glareInner.style.background = "rgba(255, 255, 255, 0.2)";
+      }
+    }
+  }, []);
+
+  const handleClick = () => {
+    if (link) {
+      window.open(link, "_blank");
+    }
   };
 
   return (
-    <motion.div
-      onHoverStart={handleHover}
-      onHoverEnd={handleHover}
-      className="w-[25vw] h-[25vw] sm:w-[7.5vw] sm:h-[7.5vw] rounded-full overflow-hidden relative"
-      style={{
-        perspective: "1000px",
-        transformStyle: "preserve-3d",
-      }}
+    <div
+      ref={tiltRef}
+      className="cursor-pointer w-64 md:w-128 h-auto bg-[#a2229e36] border border-white/15 rounded-full overflow-hidden shadow-[0_0_5px_1px_rgba(255,255,255,0.8)]"
+      onClick={handleClick}
     >
-      <motion.div
-        className="bg-white backdrop-filter backdrop-blur-lg bg-opacity-10 absolute inset-0 flex items-center justify-center text-center"
-        style={{
-          rotateY: isHovered ? 180 : 0,
-          transition: "transform 0.5s",
-          transformStyle: "preserve-3d",
-        }}
-      >
-        <div className="w-full h-full flex items-center justify-center text-center">
-          {isHovered ? "Back Content" : "Front Content"}
-        </div>
-      </motion.div>
-    </motion.div>
+      <img
+        src={imageSrc}
+        alt={altText}
+        className="w-full h-full object-cover"
+      />
+    </div>
   );
 };
 

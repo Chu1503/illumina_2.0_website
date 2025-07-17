@@ -1,9 +1,10 @@
-'use client'
-import React, { useRef, useState } from "react";
+"use client";
+import React from "react";
 import { motion } from "framer-motion";
-import { FiMousePointer } from "react-icons/fi";
-import iei_logo from "../images/iei_logo.png";
 import TiltCard from "./TiltCard";
+import speaker1 from "../images/speaker1.webp";
+import speaker2 from "../images/speaker2.webp";
+import speaker3 from "../images/speaker3.webp";
 
 type Props = {};
 
@@ -21,8 +22,8 @@ export default function Speakers({}: Props) {
       }}
       className="flex flex-col relative h-auto text-center max-w-7xl p-10 justify-evenly mx-auto items-center"
     >
-      <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl">
-        Speaker
+      <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl font-bold">
+        Speakers
       </h2>
 
       <motion.div
@@ -39,10 +40,27 @@ export default function Speakers({}: Props) {
         }}
         viewport={{ once: true }}
         className="flex flex-col space-y-10 px-0 md:px-10"
-      >
-        <p className="text-lg sm:text-xl text-center leading-10 sm:leading-10 sm:pl-20 sm:pr-20"></p>
-      </motion.div>
-      <TiltCard />
+      ></motion.div>
+      <div className="w-full flex flex-col md:flex-row justify-center items-center gap-20 py-10">
+        <TiltCard
+          imageSrc={speaker1.src}
+          altText="Speaker 1"
+          name="Hariom Shandilya"
+          link="https://www.linkedin.com/in/hariomshandilya/"
+        />
+        <TiltCard
+          imageSrc={speaker2.src}
+          altText="Speaker 2"
+          name="Sasmita Singh"
+          link="https://www.linkedin.com/in/sasmita-singh-37b0251b3/"
+        />
+        <TiltCard
+          imageSrc={speaker3.src}
+          altText="Speaker 3"
+          name="Braham Aggarwal"
+          link="https://www.linkedin.com/in/braham-aggarwal-7a08b8209/"
+        />
+      </div>
     </motion.div>
   );
-} 
+}

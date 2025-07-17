@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import pic1 from "../images/1.png";
-import pic2 from "../images/2.png";
-import pic3 from "../images/3.png";
-import pic4 from "../images/4.png";
-import pic5 from "../images/5.png";
-import pic6 from "../images/6.png";
+import pic1 from "../images/1.webp";
+import pic2 from "../images/2.webp";
+import pic3 from "../images/3.webp";
+import pic4 from "../images/4.webp";
+import pic5 from "../images/5.webp";
+import pic6 from "../images/6.webp";
 
 type Props = {};
 
@@ -75,7 +75,7 @@ export default function Gallery({}: Props) {
           duration: 1.5,
         }}
       >
-        <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl">
+        <h2 className="p-10 uppercase tracking-[10px] sm:tracking-[20px] text-[rgba(1,205,250,255)] text-4xl sm:text-5xl font-bold">
           Gallery
         </h2>
       </motion.div>

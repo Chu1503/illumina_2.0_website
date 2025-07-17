@@ -3,23 +3,22 @@ import Head from "next/head";
 import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import About from "../../components/About";
-import Tracks from "../../components/Tracks";
 import Gallery from "../../components/Gallery";
 import Speakers from "../../components/Speakers";
 import Timeline from "../../components/Timeline";
 import Prizes from "../../components/Prizes";
 import Sponsors from "../../components/Sponsors";
 import Footer from "../../components/Footer";
-import ScrollToTopButton from '../../components/ScrollToTopButton';
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const Home: NextPage = () => {
   return (
     <div
       className="[background:radial-gradient(150%_150%_at_50%_10%,#000_40%,#4B0082_100%)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-x-hidden 
-   sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#01cdfa]"
+   sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#01cdfa] scroll-container"
     >
       <Head>
-      <link
+        <link
           href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap"
           rel="stylesheet"
         />
@@ -37,11 +36,6 @@ const Home: NextPage = () => {
       {/* About */}
       <section id="about">
         <About />
-      </section>
-
-      {/* Tracks */}
-      <section id="tracks">
-        <Tracks />
       </section>
 
       {/* Speakers */}
