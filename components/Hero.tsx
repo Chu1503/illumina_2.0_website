@@ -9,6 +9,7 @@ import front4 from "../images/front4.webp";
 import front5 from "../images/front5.webp";
 import front6 from "../images/front6.webp";
 import trees from "../images/trees.webp";
+import mobile_hero from "../images/mobile_hero.webp";
 import { useRouter } from "next/navigation";
 
 const layers = [
@@ -36,16 +37,17 @@ export default function Hero({}: Props) {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <div className="particle-bg" />
-      {/* <Image
-        src={aurora}
-        alt="Aurora Background"
-        fill
-        priority
-        className="object-cover scale-120"
-      /> */}
-
-      <div className="mt-[100px] relative w-full h-full">
+      <div className="mt-[100px] relative w-full h-full hidden md:flex">
         {layers.map((layer, index) => {
+          const isLazyLoad = [
+            "trees",
+            "front1",
+            "front2",
+            "front3",
+            "front4",
+            "front5",
+            "front6",
+          ].includes(layer.name);
           const isTrees = layer.name === "trees";
           const isFront1 = layer.name === "front1";
           const isFront2 = layer.name === "front2";
@@ -57,7 +59,7 @@ export default function Hero({}: Props) {
           let transform = "none";
 
           if (isFront6) {
-            transform = `translateX(${offsetY * 0.6}px)`;
+            transform = `translateX(${offsetY * 0.3}px)`;
           } else if (isFront5) {
             transform = `translateY(${offsetY * 0.2}px)`;
           } else if (isFront4) {
@@ -86,41 +88,48 @@ export default function Hero({}: Props) {
             />
           );
         })}
+      </div>
+      
+      <div className="block md:hidden absolute inset-0 z-10">
+        <Image
+          src={mobile_hero.src}
+          alt="Mobile Hero"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div
+        className="absolute left-1/2 top-[250px] flex flex-col items-center gap-2 md:gap-0 sm:w-[50vw] w-[100vw]"
+        style={{
+          transform: `translate(-50%, -50%) translateY(${offsetY * 0.6}px)`,
+          zIndex: 1,
+        }}
+      >
+        <Image
+          src={illumina_logo_text}
+          alt="ILLUMINA LOGO TEXT"
+          className="relative rounded-full "
+          priority
+        />
 
-        <div
-          className="absolute left-1/2 top-[150px] flex flex-col items-center gap-2 md:gap-0 sm:w-[50vw] w-[100vw]"
+        <button
+          className="text-lg p-2 border border-white text-white hover:bg-[#01cdfa] hover:text-black hover:border-black rounded-lg cursor-pointer transition-opacity duration-500"
           style={{
-            transform: `translate(-50%, -50%) translateY(${offsetY * 0.6}px)`,
-            zIndex: 1,
+            opacity:
+              typeof window !== "undefined" &&
+              offsetY > window.innerHeight * 0.1
+                ? 0
+                : 1,
+            pointerEvents:
+              typeof window !== "undefined" &&
+              offsetY > window.innerHeight * 0.1
+                ? "none"
+                : "auto",
           }}
+          onClick={() => router.push("/login")}
         >
-
-          <Image
-            src={illumina_logo_text}
-            alt="ILLUMINA LOGO TEXT"
-            className="relative rounded-full "
-            priority
-          />
-
-          <button
-            className="text-lg p-2 border border-white text-white hover:bg-[#01cdfa] hover:text-black hover:border-black rounded-lg cursor-pointer transition-opacity duration-500"
-            style={{
-              opacity:
-                typeof window !== "undefined" &&
-                offsetY > window.innerHeight * 0.1
-                  ? 0
-                  : 1,
-              pointerEvents:
-                typeof window !== "undefined" &&
-                offsetY > window.innerHeight * 0.1
-                  ? "none"
-                  : "auto",
-            }}
-            onClick={() => router.push("/login")}
-          >
-            Get Started
-          </button>
-        </div>
+          Get Started
+        </button>
       </div>
     </div>
   );
