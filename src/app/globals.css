@@ -13,3 +13,30 @@
 body {
   font-family: 'Oxanium', sans-serif;
 }
+
+@keyframes subtleFloat {
+  0%   { transform: translateY(0) translateX(0); opacity: 0.9; }
+  50%  { transform: translateY(-2px) translateX(1px); opacity: 0.7; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.9; }
+}
+
+.particle-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(white 1.2px, transparent 0),
+    radial-gradient(#ffffffcc 1px, transparent 0),
+    radial-gradient(#ffffff88 0.8px, transparent 0),
+    radial-gradient(#ffffffaa 1px, transparent 0);
+  background-size: 120px 120px, 180px 160px, 250px 200px, 300px 260px;
+  background-position:
+    0 0,
+    50px 30px,
+    100px 100px,
+    200px 150px;
+  animation: subtleFloat 10s ease-in-out infinite;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
