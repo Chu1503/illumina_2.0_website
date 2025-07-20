@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import { motion } from "framer-motion";
-import iei_logo from "../images/iei_logo.png";
 
 type Props = {};
 

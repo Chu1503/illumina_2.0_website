@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { SocialIcon } from 'react-social-icons';
-import vit_logo from "../images/vit_logo.png";
+import vit_logo from "../images/vit_logo.webp";
 
 type Props = {};
 

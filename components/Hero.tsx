@@ -9,7 +9,6 @@ import front4 from "../images/front4.webp";
 import front5 from "../images/front5.webp";
 import front6 from "../images/front6.webp";
 import trees from "../images/trees.webp";
-import aurora from "../images/aurora.webp";
 import { useRouter } from "next/navigation";
 
 const layers = [
@@ -35,20 +34,7 @@ export default function Hero({}: Props) {
   }, []);
 
   return (
-    // <div className="relative h-screen w-full overflow-hidden">
-    <div className="relative h-screen w-full overflow-hidden ">
-      {/* <div
-        className="absolute inset-0 z-0 h-[69%]"
-        style={{
-          backgroundImage: `
-      linear-gradient(115deg, rgba(130, 36, 104, 0.4) 0%, transparent 70%),
-      linear-gradient(245deg, rgba(25, 99, 107, 0.3) 10%, transparent 80%),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, black 41%)
-    `,
-          backgroundSize: "400% 400%",
-          animation: "aurora 60s linear infinite",
-        }}
-      /> */}
+    <div className="relative h-screen w-full overflow-hidden">
       <div className="particle-bg" />
       {/* <Image
         src={aurora}
@@ -114,8 +100,8 @@ export default function Hero({}: Props) {
             alt="ILLUMINA LOGO TEXT"
           />
 
-          <button
-            className="text-lg p-2 border border-white text-white hover:bg-white hover:text-black hover:border-black rounded-lg cursor-pointer transition-opacity duration-500"
+          {/* <button
+            className="text-lg p-2 border border-white text-white hover:bg-[#01cdfa] hover:text-black hover:border-black rounded-lg cursor-pointer transition-opacity duration-500"
             style={{
               opacity:
                 typeof window !== "undefined" &&
@@ -131,7 +117,7 @@ export default function Hero({}: Props) {
             onClick={() => router.push("/login")}
           >
             Get Started
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
