@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import iei_logo_text from "../images/iei_logo_text.webp";
@@ -19,8 +19,8 @@ export default function Navbar({}: Props) {
   };
 
   return (
-    <header className="sticky top-0 flex flex-col items-end justify-between sm:flex-row sm:w-auto sm:max-w-screen mx-auto h-auto sm:h-16 z-30 sm:bg-black sm:items-center">
-      <div className="hidden sm:flex sm:flex-row items-center p-5 px-10">
+    <header className="sticky top-0 flex flex-col items-end justify-between lg:flex-row lg:w-auto lg:max-w-screen mx-auto h-auto lg:h-16 z-30 lg:bg-black lg:items-center">
+      <div className="flex-row items-center p-5 px-10 lg:hidden xl:flex sm:hidden md:hidden hidden">
         <img
           className="relative h-12 w-30 mx-auto object-contain"
           src={iei_logo_text.src}
@@ -28,10 +28,10 @@ export default function Navbar({}: Props) {
         />
       </div>
 
-      <div className="sm:hidden pt-5"> 
-      {/*  <div className="sm:hidden pt-5"> -> if you want to hide the navbar on phone */}
+      <div className="lg:hidden pt-5">
+        {/*  <div className="lg:hidden pt-5"> -> if you want to hide the navbar on phone */}
         <button
-          className="herobutton cursor-pointer fixed top-6 right-6 bg-black rounded-full pt-3 pb-3 pr-4 pl-4"
+          className="herobutton cursor-pointer fixed top-6 right-6 bg-[#01cdfa] rounded-full pt-3 pb-3 pr-4 pl-4 text-black"
           onClick={toggleNavVisibility}
         >
           {isNavVisible ? (
@@ -43,38 +43,72 @@ export default function Navbar({}: Props) {
       </div>
 
       <div
-        className={`sm:flex bg-black flex bg-rounded rounded-md flex-col text-right text-sm sm:text-xl sm:flex-row items-end sm:items-center text-gray-300 pt-12 pb-3 sm:p-4 ${
+        className={`lg:flex bg-black flex bg-rounded rounded-md flex-col text-right lg:flex-row items-end lg:items-center text-gray-300 pt-12 pb-3 lg:p-4 ${
           isNavVisible ? "block" : "hidden"
         }`}
       >
         <Link href="#hero">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Home</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            Home
+          </button>
         </Link>
 
         <Link href="#about">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>About</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            About
+          </button>
         </Link>
 
         <Link href="#speakers">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Speaker</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            Speaker
+          </button>
         </Link>
 
         <Link href="#timeline">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Timeline</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            Timeline
+          </button>
         </Link>
-        
+
         <Link href="#sponsors">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Sponsors</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            Sponsors
+          </button>
         </Link>
 
         <Link href="#prizes">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Prizes</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            Prizes
+          </button>
         </Link>
 
         <Link href="#gallery">
-          <button className="herobutton cursor-pointer pb-1 sm:pb-0" onClick={closeNav}>Gallery</button>
+          <button
+            className="herobutton cursor-pointer pb-1 lg:pb-0 sm:text-md text-xs xl:text-base"
+            onClick={closeNav}
+          >
+            Gallery
+          </button>
         </Link>
-
       </div>
     </header>
   );

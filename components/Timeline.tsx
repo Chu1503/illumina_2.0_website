@@ -68,13 +68,14 @@ const Circle = () => {
 
 const Pillar = () => {
   return (
-    <div className="bg-white w-0.5 h-full sm:h-28 sm:mx-auto border-none"></div>
+    <div className="bg-white w-[2px] h-full mx-auto" />
   );
 };
 
+
 const EventCard = ({ heading, timing, direction, date }: Event) => {
   return (
-    <div className="relative w-[90vw] sm:w-[26vw]">
+    <div className="relative w-[90vw] sm:w-[26vw] md:w-[35vw] xl:w-[26vw] lg:w-[26vw]">
       <div className="absolute left-1/2 top-0 h-full flex flex-col items-center -translate-x-1/2 z-[-1]">
         <div className="w-[2px] h-full bg-white" />
         <div className="w-2 h-2 rounded-full bg-white absolute top-1" />
@@ -84,14 +85,14 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
         {direction === "left" ? (
           <div className="flex flex-row w-full items-stretch">
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{date}</div>
-              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{timing}</div>
+              <div className="text-center font-semibold uppercase text-sm md:text-xs lg:text-xs xl:text-md text-white break-words">{date}</div>
+              <div className="text-center font-semibold uppercase text-sm md:text-xs lg:text-xs xl:text-md text-white break-words">{timing}</div>
             </div>
 
             <div className="w-[1px] bg-white opacity-30 mx-2" />
 
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-md xl:text-lg break-words">
+              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-md md:text-xs lg:text-xs xl:text-lg break-words">
                 {heading}
               </div>
             </div>
@@ -99,7 +100,7 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
         ) : (
           <div className="flex flex-row w-full items-stretch">
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-md xl:text-lg break-words">
+              <div className="text-center text-[rgba(1,205,250,255)] font-semibold text-md md:text-xs lg:text-xs xl:text-lg break-words">
                 {heading}
               </div>
             </div>
@@ -107,8 +108,8 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
             <div className="w-[1px] bg-white opacity-30 mx-2" />
 
             <div className="w-1/2 flex flex-col justify-center items-center px-2">
-              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{date}</div>
-              <div className="text-center font-semibold uppercase text-sm xl:text-md text-white break-words">{timing}</div>
+              <div className="text-center font-semibold uppercase text-sm md:text-xs lg:text-xs xl:text-md text-white break-words">{date}</div>
+              <div className="text-center font-semibold uppercase text-sm md:text-xs lg:text-xs xl:text-md text-white break-words">{timing}</div>
             </div>
           </div>
         )}
@@ -116,8 +117,6 @@ const EventCard = ({ heading, timing, direction, date }: Event) => {
     </div>
   );
 };
-
-
 
 export default function Timeline() {
   return (
@@ -155,7 +154,7 @@ export default function Timeline() {
           {events.map((event, key) => {
             return (
               <Fragment key={key}>
-                <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center w-[100%]">
+                <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 w-[100%]">
                   {event.direction === "left" ? (
                     <EventCard
                       heading={event.heading}

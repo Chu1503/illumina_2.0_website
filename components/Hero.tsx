@@ -88,19 +88,21 @@ export default function Hero({}: Props) {
         })}
 
         <div
-          className="absolute left-1/2 top-[150px] flex flex-col items-center gap-2 md:gap-0"
+          className="absolute left-1/2 top-[150px] flex flex-col items-center gap-2 md:gap-0 sm:w-[50vw] w-[100vw]"
           style={{
             transform: `translate(-50%, -50%) translateY(${offsetY * 0.6}px)`,
             zIndex: 1,
           }}
         >
-          <img
-            className="relative rounded-full sm:w-[50vw] w-[100vw] mx-auto"
-            src={illumina_logo_text.src}
+
+          <Image
+            src={illumina_logo_text}
             alt="ILLUMINA LOGO TEXT"
+            className="relative rounded-full "
+            priority
           />
 
-          {/* <button
+          <button
             className="text-lg p-2 border border-white text-white hover:bg-[#01cdfa] hover:text-black hover:border-black rounded-lg cursor-pointer transition-opacity duration-500"
             style={{
               opacity:
@@ -117,7 +119,7 @@ export default function Hero({}: Props) {
             onClick={() => router.push("/login")}
           >
             Get Started
-          </button> */}
+          </button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
@@ -81,14 +81,20 @@ export default function Gallery({}: Props) {
       </motion.div>
       <div className="w-full m-auto relative group">
         <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-          <div
-            style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-            className="absolute top-0 left-0 w-full h-full rounded-2xl bg-center bg-cover bg-no-repeat duration-500 shadow-xl shadow-black"
-          >
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/70 text-[#01cdfa] cursor-pointer">
-              <BsChevronCompactLeft onClick={prevSlide} size={30}/>
+          <div className="absolute top-0 left-0 w-full h-full">
+            <img
+              src={slides[currentIndex].url}
+              alt={`Gallery Image ${currentIndex + 1}`}
+              loading="lazy"
+              className="w-full h-full object-cover rounded-2xl shadow-xl shadow-black transition duration-700 ease-in-out blur-sm scale-105"
+              onLoad={(e) => {
+                e.currentTarget.classList.remove("blur-sm", "scale-105");
+              }}
+            />
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-1/2 left-5 text-2xl rounded-full p-2 bg-black/70 text-[#01cdfa] cursor-pointer">
+              <BsChevronCompactLeft onClick={prevSlide} size={30} />
             </div>
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/70 text-[#01cdfa] cursor-pointer">
+            <div className="hidden group-hover:block absolute top-[50%] -translate-y-1/2 right-5 text-2xl rounded-full p-2 bg-black/70 text-[#01cdfa] cursor-pointer">
               <BsChevronCompactRight onClick={nextSlide} size={30} />
             </div>
           </div>
