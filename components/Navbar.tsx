@@ -19,7 +19,7 @@ export default function Navbar({}: Props) {
   };
 
   return (
-    <header className="sticky top-0 flex-col items-end justify-between lg:flex-row lg:w-auto lg:max-w-screen mx-auto h-auto lg:h-16 z-30 lg:bg-black lg:items-center md:flex hidden">
+    <header className="sticky top-0 flex-col items-end justify-between lg:flex-row lg:w-auto lg:max-w-screen mx-auto h-auto lg:h-16 z-30 lg:bg-black lg:items-center flex">
       <div className="flex-row items-center p-5 px-10 lg:hidden xl:flex sm:hidden md:hidden hidden">
         <img
           className="relative h-12 w-30 mx-auto object-contain"
@@ -28,7 +28,7 @@ export default function Navbar({}: Props) {
         />
       </div>
 
-      <div className="lg:hidden pt-5">
+      <div className="lg:hidden z-[100]">
         {/*  <div className="lg:hidden pt-5"> -> if you want to hide the navbar on phone */}
         <button
           className="herobutton cursor-pointer fixed top-6 right-6 bg-[#01cdfa] rounded-full pt-3 pb-3 pr-4 pl-4 text-black"
