@@ -6,7 +6,11 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '3xl': '2560px',
+      },
+    },
   },
   plugins: [require("tailwind-scrollbar")],
 };

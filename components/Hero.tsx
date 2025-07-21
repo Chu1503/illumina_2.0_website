@@ -99,7 +99,7 @@ export default function Hero({}: Props) {
         />
       </div>
       <div
-        className="absolute left-1/2 top-[250px] flex flex-col items-center gap-2 md:gap-0 sm:w-[50vw] w-[100vw]"
+        className="absolute left-1/2 top-[250px] 3xl:top-[350px] flex flex-col items-center gap-2 md:gap-0 sm:w-[50vw] w-[100vw]"
         style={{
           transform: `translate(-50%, -50%) translateY(${offsetY * 0.6}px)`,
           zIndex: 1,

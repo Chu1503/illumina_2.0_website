@@ -19,7 +19,7 @@ export default function Navbar({}: Props) {
   };
 
   return (
-    <header className="sticky top-0 flex flex-col items-end justify-between lg:flex-row lg:w-auto lg:max-w-screen mx-auto h-auto lg:h-16 z-30 lg:bg-black lg:items-center">
+    <header className="sticky top-0 flex-col items-end justify-between lg:flex-row lg:w-auto lg:max-w-screen mx-auto h-auto lg:h-16 z-30 lg:bg-black lg:items-center md:flex hidden">
       <div className="flex-row items-center p-5 px-10 lg:hidden xl:flex sm:hidden md:hidden hidden">
         <img
           className="relative h-12 w-30 mx-auto object-contain"
